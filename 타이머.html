@@ -1,0 +1,53 @@
+<!-- 
+  - "1초 걸리는 타이머 입니다."를 1초 후에 출력하는 타이머를 만든다.
+  - 타이머 콜백함수에 파라메터 num을 설정하고, num에 1을 받아서 1초 후에 출력해본다.
+  - 타이머 콜백함수에 파라메터 string를 설정하고, string에 "안녕!"을 받아서 0.5초 후에 출력해본다.
+  - 타이머 콜백함수에 파라메터 coffee, price를 설정하고, "제가 좋아하는 커피 (coffee)는 (price)원 입니다. "라는 문자열을 1초 후, 출력한다. 
+    (coffee에 좋아하는 커피를 넣으세요, 가격은 아무 숫자나 넣으세요)
+ -->
+<html>
+  <body>
+    타이머
+  </body>
+</html>
+<script>
+//  - "1초 걸리는 타이머 입니다."를 1초 후에 출력하는 타이머를 만든다.
+// const wait_count = setTimeout(() =>{
+//     console.log('1초 걸리는 타이머 입니다.')
+//   }, 1000)
+setTimeout(() =>{
+console.log("1초 걸리는 타이머 입니다.")
+}, 1000);
+
+//   - 타이머 콜백함수에 파라메터 num을 설정하고, num에 1을 받아서 1초 후에 출력해본다.
+// const num = setTimeout(() =>{
+//     console.log(1)
+//   },1000)
+setTimeout((num)=>{
+ console.log(num)
+}, 1000, 1);
+
+
+//   - 타이머 콜백함수에 파라메터 string를 설정하고, string에 "안녕!"을 받아서 0.5초 후에 출력해본다.
+// const string = setTimeout(() =>{
+//     console.log('안녕!')
+//   },500)
+
+setTimeout((string)=>{
+ console.log(string)
+},500, "안녕!")
+
+
+//   - 타이머 콜백함수에 파라메터 coffee, price를 설정하고, "제가 좋아하는 커피 (coffee)는 (price)원 입니다. "라는 문자열을 1초 후, 출력한다. 
+//     (coffee에 좋아하는 커피를 넣으세요, 가격은 아무 숫자나 넣으세요)
+// function coffee1(coffee,price){
+// console.log(`제가좋아하는 ${coffee}는 ${price}원 입니다.`)
+// }   
+// coffee1('아이스아메리카노',2000)
+
+setTimeout((coffee, price)=>{
+console.log(`제가 좋아하는 커피 ${coffee}는 ${price}원 입니다.`)
+},1000,"아이스 아메리카노",2000)
+
+</script>
+

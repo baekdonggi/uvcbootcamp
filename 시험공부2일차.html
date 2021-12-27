@@ -1,0 +1,215 @@
+<html>
+<body>
+시험복습
+</body>
+</html>
+<script>
+// // <!-- - 변수 num1에 숫자 20을 초기화하기
+const num1 = 20
+// // - 변수 num2에 숫자 30을 초기화하기
+const num2 = 30
+// // - num1, num2를 차례대로 콘솔에 프린트하기
+console.log(num1,num2)
+// // - num1, num2를 더한값을 콘솔에 프린트하기
+console.log(num1 + num2)
+// // - num1, num2를 뺀값을 콘솔에 프린트하기
+console.log(num1 - num2)
+// // - num1, num2를 나눈값을 콘솔에 프린트하기
+console.log(num1 / num2)
+// // - 변수 str1에 "자바스크립트"
+const str1 = "자바스크립트"
+// // - 변수 str2에 "너무 재밌네요"
+const str2 = "너무 재밌네요"
+// // - str1, str2 콘솔에 차례대로 프린트하기
+console.log(str1, str2)
+// // - 변수 myName에 자신의 이름을 초기화하기
+const myName = "백동기"
+// // - 변수 favorite에 자기가 좋아하는 것 초기화하기
+const favorite = "치킨"
+// // - 변수 str에 "나 (변수 myName)(은/는) (변수 favorite)(을/를) 좋아합니다!" 초기화하고, 프린트하기 -->
+const str = `나 ${myName}(은/는) ${favorite}(을/를) 좋아합니다!`
+console.log(str)
+
+
+// // - 숫자 1을 반환(return)하는 함수 func1을 만든다 (function으로 만들기)
+function func1() {
+  return 1
+}
+// //   - func1을 콘솔에 프린트한다
+console.log(func1())
+// //   - 숫자 5를 반환(return)하는 함수 func2를 만든다 (화살표 함수 만들기)
+const func2 = () => {
+return 5 
+}
+// //   - func2를 콘솔에 프린트한다
+console.log(func2())
+// //   - 파라메터 x, y가 있고, 설정한 파라메터 두 개를 더해서 반환하는 함수 func3를 만든다
+const func3 = (x, y) => {
+return x + y
+}
+
+// //   - func3 함수에 func1과 func2를 값으로 받아서 콘솔에 프린트한다
+console.log(func3(func1(), func2()))
+
+
+ 
+// // - "1초 걸리는 타이머 입니다."를 1초 후에 출력하는 타이머를 만든다.
+setTimeout (() =>{
+console.log("1초 걸리는 타이머 입니다.")
+},1000)
+
+// //   - 타이머 콜백함수에 파라메터 num을 설정하고, num에 1을 받아서 1초 후에 출력해본다.
+setTimeout((num)=>{
+ console.log(num)
+},1000,1)
+// //   - 타이머 콜백함수에 파라메터 string를 설정하고, string에 "안녕!"을 받아서 0.5초 후에 출력해본다.
+setTimeout((string)=>{
+console.log(string)
+},500,"안녕")
+
+// //   - 타이머 콜백함수에 파라메터 coffee, price를 설정하고, "제가 좋아하는 커피 (coffee)는 (price)원 입니다. "라는 문자열을 1초 후, 출력한다. 
+// //     (coffee에 좋아하는 커피를 넣으세요, 가격은 아무 숫자나 넣으세요)
+setTimeout((coffee, price)=>{
+console.log(`제가 좋아하는 커피 ${coffee}는 ${price}원 입니다.`)
+},2000,"아메리카노",2000)
+
+
+// // - ONE, TWO, THREE 차례대로 출력문제 (코드 참조)
+const wait_count = (callback) => {
+  console.log('ONE')
+  setTimeout(()=>{
+  console.log('TWO')
+  callback()   
+  },1000)
+}
+const count3 = () => console.log('THREE')
+  wait_count(count3)
+
+//   - 파라메터 num, callback을 설정하고, 콜백함수에 num * 5를 파라메터로 받는 함수 func1을 만든다
+const func1 = (num, callback) =>{
+ callback(num*5)
+ setTimeout (()=>{
+   console.log("TWO")
+ },1000)
+}
+const func2 = (num5) => {
+ console.log(`func2 에서 num*5를 받았습니다. ${num5}`)
+}
+func1(10,func2)
+
+// const func1 = (num, callback) =>{
+//    callback(num * 5)
+//    setTimeout(()=>{
+//      console.log("TWO")
+//    },1000);
+//  }
+//  const func2 = (num5) => {
+//  console.log(`func2에서 num*5를 받았습니다 ${num5}`)
+//  }
+//  func1(10, func2)
+
+
+// //   - 파라메터 num5를 설정하고,  "func2에서 num * 5를 받았습니다 (num5)" 를 출력하는 함수 func2를 만든다
+// const func2 = (num5)=>{
+//  console.log(`func2에서 num * 5를 받았습니다${num5}`)
+// }
+// //   - 위에서 만든 함수 func1에 10, func2를 값으로 넣어서 호출한다.  
+// func1(10,func2)
+
+// //   - 위에서 만든 함수 func1에서 "TWO"를 1초 후에 출력하도록 수정한다. (수정한 부분은 주석처리)
+
+
+// //   - bugerName, price, quantity, isLarge, callback를 파라메터로 설정하는 buyBuger함수를 만든다
+// const buyBuger =(bugerName, price, quantity, isLarge, callback) =>{
+//  console.log(`${bugerName}를 ${quantity}개 구입하려 합니다.`)
+//  console.log(`${bugerName} 한 개는 ${price}원 입니다.`)
+//  if (isLarge) {
+//    console.log("감자와 콜라는 라지로 하겠습니다.")
+//  }
+//  setTimeout(() => {
+//    console.log("햄버거값 계산 완료했습니다.")
+//    callback(price*quantity)
+//  }, 1000);
+// }
+
+// const pay =(money) =>{
+//  console.log(`${money}원을 지불하였습니다.`)
+// } 
+// buyBuger("치즈버거",3000,5,3,pay)
+//   - buyBuger 함수안에 "(bugerName)를 (quantity)개 구입하려 합니다."를 출력하는 부분을 만듭니다.
+//   - buyBuger 함수안에 "(bugerName) 한 개는 (price)원 입니다."를 출력하는 부분을 만듭니다.
+//   - buyBuger 함수안에 if를 사용해서 isLarge가 true일때, "감자와 콜라는 라지로 하겠습니다" 를 출력하는 부분을 만듭니다.
+//   - buyBuger 함수안에 1초후에 "햄버거값 계산 완료했습니다."가 출력되는 타이머를 만듭니다.
+//   - money를 파라메터로 설정하는 pay 함수를 만듭니다.
+//   - pay 함수안에 "(money)원을 지불하였습니다."를 출력하는 부분을 만듭니다.
+//   - buyBuger안에 계산을 기다리고, 돈을 지불하게 하는 콜백함수를 만듭니다.
+//   - buyBuger 함수를 호출합니다. (bugerName, price, quantity, isLarge는 아무거나, callback부분은 pay함수를 사용)
+
+
+// // - 프라미스 객체를 만들고, "안녕하세요"를 resolve한다
+// //   - then을 활용하여 위에서 resolve한 "안녕하세요"를 출력하고, 받은데이터 + " 여러분"을 반환(return)한다
+// //   - 다음 then을 추가하여 위에 반환한 데이터를 출력한다.
+
+// new Promise ((resolve) => {
+//  resolve("안녕하세요")
+// })
+
+// .then((result) => {
+//  console.log(result)
+//  return result + "여러분"
+// })
+// .then((result)=>{
+// console.log(result)
+// })
+
+// // 프라미스 객체 반환(return)하고 파라메터가 name, prevName으로 설정하는 함수 promise_func를 만든다.
+// // //   - 함수 promise_func에서 "(prevName),(name), " 형태로 newName 변수에 담는다. 
+// // // (단, prevName이 없다면, name만 담는다.)
+// // //   - 함수 promise_func에서 newName을 1초후에 출력하고, resolve하는 타이머를 만든다.
+// // //   - 햄버거, 피자, 치킨, 떡볶이가 순서대로 출력될 수 있도록, 함수 promise_func를 호출한다. (then 사용) 
+// // //     (햄버거 -> 햄버거, 피자 -> 햄버거, 피자, 치킨 -> 햄버거, 피자, 치킨, 떡볶이)
+
+// const promise_func = (name, prevName) => {
+//   if(prevName) {
+//     newName = `${prevName}, ${name}`
+//   } else{
+//     newName = name
+//   }
+//   return new Promise((resolve)=>{
+//    setTimeout(() => {
+//      console.log(newName)
+//    }, 1000);
+//  })
+// }
+// promise_func("햄버거")
+
+// .then((fastfood)=>{
+//   return promise_func("피자", fastfood)
+// })
+
+// // const promise_func = (name, prevName) => {
+// //   let newName = ''
+// //   if(prevName) {
+// //     newName = `${prevName}, ${name}`   
+// //   } else {
+// //     newName = name 
+// //   }
+// //   return new Promise((resolve) => {
+// //    setTimeout(() =>{
+// //      console.log(newName)
+// //     resolve(newName)
+// //    }, 1000)
+// //  })
+// // }
+
+// // promise_func("햄버거")
+// //  .then((fastfood)=>{
+// //    return promise_func("피자",fastfood)
+// //  })
+// // //위에랑 똑같아 한줄이면 리턴생략 .then((fastfood)=>{promise_func("피자",fastfood)}
+
+// // .then((fastfood)=> promise_func("치킨",fastfood))
+// // .then((fastfood)=> promise_func("떡볶이",fastfood))
+
+
+</script>
